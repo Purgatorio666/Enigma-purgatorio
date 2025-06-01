@@ -6,55 +6,55 @@
   <title>Purgatório</title>
   <style>
     body {
-      background-color: #131212;
+      background-color: #000;
       color: #fff;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: monospace;
       text-align: center;
       padding: 50px 20px;
     }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 0 0 5px red
-    }
-
-    p {
-      font-size: 1.2em;
-    }
-
     img {
-      max-width: 20%;
+      max-width: 90%;
       margin: 30px auto;
       display: block;
       border: 2px solid #444;
     }
-
-    audio {
-      margin-top: 20px;
+    #conteudo {
+      display: none;
     }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #888;
+    button {
+      background: #222;
+      color: white;
+      border: 1px solid #666;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Bem-vindo ao Purgatório</h1>
+  <div id="intro">
+    <h1>Purgatório</h1>
+    <p>Clique abaixo para começar sua travessia.</p>
+    <button onclick="iniciar()">Entrar</button>
+  </div>
 
-  <p>Você acorda em um lugar onde o tempo parou.</p>
+  <div id="conteudo">
+    <h2>Bem-vindo ao Purgatório</h2>
+    <p>Você acorda em um lugar onde o tempo parou.</p>
+    <img src="assets/img/imagem1.jpg" alt="Imagem do enigma" />
+    <audio id="audio" loop>
+      <source src="assets/audio/ambiente.mp3" type="audio/mpeg" />
+      Seu navegador não suporta áudio.
+    </audio>
+    <p style="margin-top: 40px; font-size: 0.9em;">A próxima resposta está no próprio caminho...</p>
+  </div>
 
-  <img src="assets/img/imagem1.jpg" alt="Festa junina uai" />
-
-  <audio autoplay loop>
-    <source src="assets/audio/ambiente.mp3" type="audio/mpeg" />
-    Seu navegador não suporta áudio.
-  </audio>
-
-  <footer>
-    A próxima resposta está no próprio caminho...
-  </footer>
+  <script>
+    function iniciar() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('conteudo').style.display = 'block';
+      document.getElementById('audio').play();
+    }
+  </script>
 </body>
 </html>
